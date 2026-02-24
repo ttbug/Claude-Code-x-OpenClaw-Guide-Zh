@@ -5,8 +5,8 @@
 > - **作者**：老金
 > - **预计学时**：6-8小时
 > - **难度等级**：⭐⭐⭐ 中级进阶
-> - **更新日期**：2025年12月24日
-> - **适用版本**：Claude Agent SDK v0.1.0+
+> - **更新日期**：2026年2月
+> - **适用版本**：Claude Code v2.1+（验证于2026-02-25）
 > - **信息来源**：[官方文档](https://docs.anthropic.com/en/docs/claude-code/sdk)、[GitHub Python SDK](https://github.com/anthropics/claude-agent-sdk-python)、[GitHub TypeScript SDK](https://github.com/anthropics/claude-agent-sdk-typescript)
 
 > **版本说明**：Claude Agent SDK（原名Claude Code SDK）是2025年Anthropic官方发布的开发工具包。本教程基于最新官方文档编写，如有更新请以官方为准。
@@ -1834,7 +1834,7 @@ async def rate_limited_query(prompts, delay=1.0):
 ---
 
 **课程版本**：V1.1
-**最后更新**：2025-12-24
+**最后更新**：2026年2月25日
 **作者**：Claude Code教程团队
 
 ---

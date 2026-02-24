@@ -5,10 +5,10 @@
 - **作者**：老金
 - **预计学时**：8-10小时
 - **难度等级**：⭐⭐ 入门级（有Claude Code基础即可）
-- **更新日期**：2025年1月18日
-- **适用版本**：Claude Code v2.10+（含2.10核心新特性）
+- **更新日期**：2026年2月
+- **适用版本**：Claude Code v2.1+（验证于2026-02-25）
 - **前置要求**：已完成Claude Code安装和Commands基础使用
-- **🆕 2.10+专属内容**：Hooks系统、Forked Sub-Agents、Hot Reloading
+- **🆕 专属内容**：Hooks系统、Forked Sub-Agents、Hot Reloading
 
 ---
 
@@ -21,7 +21,7 @@
 3. **掌握SKILL.md结构**：理解YAML Frontmatter和Markdown Body的编写规范
 4. **掌握Skill目录结构**：理解scripts、templates等资源组织方式
 5. **掌握渐进式披露机制**：理解元数据→指令→资源的三层加载逻辑
-6. **利用Hot Reloading**：快速迭代Skill，修改后自动生效（2.1.0+）
+6. **利用Hot Reloading**：快速迭代Skill，修改后自动生效
 7. **配置Sandbox安全**：正确设置文件系统、网络、内存等权限边界
 8. **集成Python脚本**：实现自动化工具扩展Claude Code能力
 9. **上传自定义Skill**：通过Web界面或API上传和管理Skill
@@ -110,7 +110,7 @@
 | **scripts/** | - | 脚本文件夹，存放可执行的工具程序 | APP的功能模块代码 |
 | **templates/** | - | 模板文件夹，存放输出格式模板 | 文档模板库 |
 | **Progressive Disclosure** | 渐进式披露 | 按需加载：元数据常驻内存，指令和资源按需加载 | 微信：先看图标，点开看功能，用时加载详情 |
-| **Hot Reloading** | - | 修改SKILL.md后自动生效，无需重启（2.1.0+） | APP热更新，改完立即生效 |
+| **Hot Reloading** | - | 修改SKILL.md后自动生效，无需重启 | APP热更新，改完立即生效 |
 | **Sandbox** | 沙箱 | 隔离执行环境，限制文件/网络访问，保证安全 | APP的权限管理（只能访问相册） |
 | **Commands** | 斜杠命令 | 显式触发的操作入口 | APP里的功能按钮 |
 | **YAML** | YAML Ain't Markup Language | 配置文件格式，易读易写 | 填写表格（有固定格式） |
@@ -313,7 +313,7 @@ description: 当用户提到"公众号"、"写文章"、"老金风格"等关键�
 - ✅ 最简单，只需要1个文件夹 + 1个SKILL.md
 - ✅ 效果直观，立即看到输出
 - ✅ 无依赖，不需要安装任何东西
-- ✅ 支持Hot Reloading（修改后自动生效，2.1.0+）
+- ✅ 支持Hot Reloading（修改后自动生效）
 
 **目标**：创建一个"代码注释生成器"Skill，自动为代码添加中文注释。
 
@@ -685,7 +685,7 @@ Skills采用**约定优于配置**的目录结构，每个Skill都是 `.claude/s
 | `docs/` | 可选 | 开发者内部文档 | 开发手册 |
 | `data/` | 可选 | 静态数据文件 | 离线数据包 |
 
-🎯 **2.10+重大变化**：不再使用`skill.yaml`和`prompts/`文件夹，所有内容统一到`SKILL.md`文件中！
+🎯 **重要说明**：当前版本不再使用`skill.yaml`和`prompts/`文件夹，所有内容统一到`SKILL.md`文件中！
 
 ### 3.2 SKILL.md配置详解
 
@@ -807,9 +807,9 @@ Markdown Body是SKILL.md的核心部分，包含所有详细指令。推荐遵�
 - 随着需求增长逐步扩展
 - 不要过度设计
 
-### 3.5 2.10+版本新特性详解
+### 3.5 核心特性详解
 
-🎯 **这是本教程最重要的更新内容**，掌握这些新特性能让你的Skill开发事半功倍！
+🎯 **掌握这些特性能让你的Skill开发事半功倍！**
 
 #### Hot Reloading（热重载）
 
@@ -835,7 +835,7 @@ Claude Code检测到文件变化
 3. 重新启动claude
 4. 测试修改
 
-# Hot Reloading方式（2.10+）
+# Hot Reloading方式
 1. 修改SKILL.md
 2. 直接测试，立即生效 ✨
 ```
@@ -847,7 +847,7 @@ Claude Code检测到文件变化
 
 #### Sandbox安全机制
 
-**功能说明**：2.10+版本引入Sandbox机制，限制Skill脚本的文件系统和网络访问权限。
+**功能说明**：Sandbox机制限制Skill脚本的文件系统和网络访问权限。
 
 **安全级别**：
 
@@ -915,7 +915,7 @@ sandbox: workspace-write
 
 **本节目的**：掌握在SKILL.md中组织提示词的技巧和最佳实践。
 
-🎯 **2.10+重大变化**：不再使用独立的`prompts/`文件夹，所有提示词内容统一写在SKILL.md的Markdown Body中！
+🎯 **重要说明**：不再使用独立的`prompts/`文件夹，所有提示词内容统一写在SKILL.md的Markdown Body中！
 
 ### 4.1 提示词组织方式
 
@@ -1087,7 +1087,7 @@ description: 公众号写作助手V9.0
 
 ## 版本历史
 
-### V9.0.0 (2025-01-18) - 2.10+适配
+### V9.0.0 (2025-01-18) - 当前版本适配
 **重大变更**：
 - 不再使用skill.yaml，改为SKILL.md
 - 删除prompts/文件夹，所有提示词统一到Markdown Body
@@ -1537,7 +1537,7 @@ wechat_articles.json
 
 ### 6.3 企业级Skill目录结构
 
-**公众号写作助手完整结构（V9.0 2.10+适配版）**：
+**公众号写作助手完整结构（V9.0 当前版本适配）**：
 
 ```
 .claude/skills/gongzhonghao-writer/
@@ -1896,7 +1896,7 @@ description: 当用户要求"添加注释"或"代码注释"时激活
 ## 版本历史
 
 ### V2.0.0 (2025-01-18)
-- 适配2.10+新特性
+- 适配当前版本新特性
 - 改为SKILL.md单文件结构
 
 ### V1.0.0 (2025-01-01)
@@ -1968,7 +1968,7 @@ description: 当用户要求"添加注释"或"代码注释"时激活
 
 ```bash
 #!/bin/bash
-# create-skill.sh - Skill目录结构一键创建（2.10+版本）
+# create-skill.sh - Skill目录结构一键创建
 # 用法: ./create-skill.sh <skill-name>
 
 SKILL_NAME=$1
@@ -2200,7 +2200,7 @@ if __name__ == "__main__":
 
 **恭喜完成Skills定制教程！**
 
-现在你已经掌握了创建和管理Claude Code Skills的核心技能，特别是2.10+版本的重大变化。
+现在你已经掌握了创建和管理Claude Code Skills的核心技能。
 
 **下一步建议**：
 1. 为你的工作领域创建一个实用的Skill
@@ -2211,12 +2211,12 @@ if __name__ == "__main__":
 ---
 
 **文档信息**
-- 版本：2.0.0（适配Claude Code 2.10+）
-- 更新日期：2025年1月18日
+- 版本：2.0.0（适配Claude Code v2.1+）
+- 更新日期：2026年2月25日
 - 字数：约18,000字
 - 作者：老金
 - 主要更新：
-  - 全面适配2.10+版本：skill.yaml → SKILL.md
+  - 全面适配当前版本：skill.yaml → SKILL.md
   - 删除prompts/文件夹概念
   - 补充Hot Reloading机制
   - 补充Sandbox安全机制

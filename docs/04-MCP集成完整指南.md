@@ -5,8 +5,8 @@
 > - **作者**：老金
 > - **预计学时**：4-6小时
 > - **难度等级**：⭐⭐ 入门级（有Claude Code基础即可）
-> - **更新日期**：2025年12月22日
-> - **适用版本**：MCP规范 2025-11-25 / Claude Code v2.0+（验证于2025-12-22）
+> - **更新日期**：2026年2月
+> - **适用版本**：MCP规范 2025-11-25 / Claude Code v2.1+（验证于2026-02-25）
 > - **前置要求**：已完成Claude Code安装和基础使用
 
 ---
@@ -351,7 +351,7 @@ claude
 **启动时会看到**：
 
 ```
-Claude Code v2.0.71
+Claude Code v2.1.45
 Working directory: /你的项目路径
 
 MCP servers connected:
@@ -2253,10 +2253,10 @@ npm publish --access public
 > - [Claude Code文档](https://code.claude.com/docs/en/mcp) | 验证日期：2025-12-22
 
 **作者**：老金
-**更新日期**：2025年12月23日
+**更新日期**：2026年2月25日
 **版本**：V1.1（Critical Thinking审查修正版）
 **字数统计**：约3,500行 / 28,000字
-**适用版本**：MCP规范 2025-11-25 / Claude Code v2.0+
+**适用版本**：MCP规范 2025-11-25 / Claude Code v2.1+
 
 ---
 

@@ -5,8 +5,8 @@
 > - **作者**：老金
 > - **预计学时**：4-6小时
 > - **难度等级**：⭐⭐ 入门级（有Claude Code基础即可）
-> - **更新日期**：2025年12月22日
-> - **适用版本**：Claude Code v2.0+（验证于2025-12-22）
+> - **更新日期**：2026年2月
+> - **适用版本**：Claude Code v2.1+（验证于2026-02-25）
 > - **前置要求**：已完成Claude Code安装和基础使用
 
 ---
@@ -17,7 +17,7 @@
 
 1. **理解Hooks的核心价值**：掌握Hooks与传统提示词的本质区别
 2. **配置第一个Hook**：5分钟内完成最简单的Hook配置并看到效果
-3. **掌握6种Hook类型**：PreToolUse、PostToolUse、UserPromptSubmit等全部类型
+3. **掌握8种Hook类型**：PreToolUse、PostToolUse、UserPromptSubmit、WorktreeCreate、WorktreeRemove等全部类型
 4. **实现自动化工作流**：Git提交检查、代码格式化、文件保护等实战场景
 5. **排查Hook故障**：独立解决90%的常见配置和执行问题
 6. **安全使用Hooks**：理解安全风险并正确配置权限
@@ -104,6 +104,8 @@
 | **SessionStart** | Session Start | 会话开始时触发的Hook | 开机自动启动程序 |
 | **SessionEnd** | Session End | 会话结束时触发的Hook | 关机前自动保存 |
 | **Stop** | - | AI停止响应时触发的Hook | 紧急刹车后的状态保存 |
+| **WorktreeCreate** 🆕 | Worktree Create | 工作树**创建**时触发的Hook | 新开一个平行工作台时的初始化 |
+| **WorktreeRemove** 🆕 | Worktree Remove | 工作树**删除**时触发的Hook | 关闭平行工作台时的清理 |
 | **Matcher** | - | 匹配规则，决定Hook对哪些工具生效 | 筛选器（只检查特定行李） |
 | **Decision** | - | PreToolUse Hook的返回决策 | 安检结果（放行/拦截/询问） |
 | **stdin** | Standard Input | 标准输入，Hook接收数据的方式 | 传送带送入检查口 |
@@ -245,7 +247,7 @@ Claude处理提示词
 返回结果给用户
 ```
 
-**6种Hook类型触发时机**：
+**8种Hook类型触发时机**：
 
 | Hook类型 | 触发时机 | 典型用途 | 可否阻止后续操作 |
 |----------|----------|----------|-----------------|
@@ -256,6 +258,8 @@ Claude处理提示词
 | **SessionStart** | 会话开始时 | 环境初始化 | ❌ 否 |
 | **SessionEnd** | 会话结束时 | 清理临时文件 | ❌ 否 |
 | **Stop** | AI停止响应时 | 保存状态 | ❌ 否 |
+| **WorktreeCreate** 🆕 | 工作树创建时 | 初始化工作树配置 | ❌ 否 |
+| **WorktreeRemove** 🆕 | 工作树删除时 | 清理工作树资源 | ❌ 否 |
 
 ### 1.4 安全警告（重要！）
 
@@ -580,7 +584,7 @@ echo '{"tool_name": "Write", "tool_input": {"file_path": "test.txt"}}' | python 
 
 ---
 
-## 第三部分：6种Hook类型详解
+## 第三部分：8种Hook类型详解
 
 > **本节目的**：掌握所有Hook类型的用法
 >
@@ -1463,6 +1467,98 @@ sys.exit(0)
 
 ---
 
+### 3.7 WorktreeCreate 和 WorktreeRemove（工作树管理）🆕
+
+> **v2.1+ 新增**：这两个Hook类型是 Claude Code 2.1 版本新增的，用于 Git Worktree（工作树）的生命周期管理。
+
+#### 什么是 Git Worktree？
+
+> 💡 **生活类比**：Git Worktree 就像在同一个项目里开了多个"平行工作台"。你可以在工作台A修bug，同时在工作台B开发新功能，互不干扰。Claude Code 使用 Worktree 来实现并行任务隔离。
+
+#### WorktreeCreate（工作树创建时触发）
+
+**触发时机**：Claude Code 创建新的 Git Worktree 时自动触发
+
+**典型用途**：
+- 初始化工作树特定的环境配置
+- 安装工作树所需的依赖
+- 设置工作树专属的环境变量
+- 记录工作树创建日志
+
+**配置示例**：
+
+```json
+{
+  "hooks": {
+    "WorktreeCreate": [
+      {
+        "command": "echo \"新工作树已创建: $(date)\" >> ~/.claude/worktree.log",
+        "timeout": 10000
+      }
+    ]
+  }
+}
+```
+
+**输入数据**（通过 stdin 接收 JSON）：
+
+```json
+{
+  "worktree_path": "/path/to/worktree",
+  "branch": "feature/new-feature"
+}
+```
+
+#### WorktreeRemove（工作树删除时触发）
+
+**触发时机**：Claude Code 删除 Git Worktree 时自动触发
+
+**典型用途**：
+- 清理工作树相关的临时文件
+- 释放工作树占用的资源
+- 记录工作树删除日志
+- 归档工作树的工作成果
+
+**配置示例**：
+
+```json
+{
+  "hooks": {
+    "WorktreeRemove": [
+      {
+        "command": "echo \"工作树已删除: $(date)\" >> ~/.claude/worktree.log",
+        "timeout": 10000
+      }
+    ]
+  }
+}
+```
+
+**实战场景：工作树生命周期管理**
+
+```json
+{
+  "hooks": {
+    "WorktreeCreate": [
+      {
+        "command": ".claude/hooks/worktree-init.sh",
+        "timeout": 30000
+      }
+    ],
+    "WorktreeRemove": [
+      {
+        "command": ".claude/hooks/worktree-cleanup.sh",
+        "timeout": 15000
+      }
+    ]
+  }
+}
+```
+
+> ⚠️ **注意**：WorktreeCreate 和 WorktreeRemove 都是**不可阻止**的Hook，它们只用于执行附加操作，不能阻止工作树的创建或删除。
+
+---
+
 ## 第四部分：实战应用场景
 
 > **本节目的**：学习真实项目中的Hook应用
@@ -2242,6 +2338,8 @@ git commit -m "Add Claude Code hooks"
 | SessionStart | 会话开始 | 无 | 无 | X |  |
 | SessionEnd | 会话结束 | 无 | 无 | X |  |
 | Stop | AI停止 | JSON | 无 | X |  |
+| WorktreeCreate 🆕 | 工作树创建 | JSON | 无 | X |  |
+| WorktreeRemove 🆕 | 工作树删除 | JSON | 无 | X |  |
 
 ### 常用工具名速查
 
@@ -2369,7 +2467,7 @@ exit 0
 ---
 
 **文档版本**：v1.1（Critical Thinking审查修正版）
-**最后更新**：2025年12月22日
+**最后更新**：2026年2月25日
 **作者**：老金
 
 ### v1.1 修正内容（2025-12-23）

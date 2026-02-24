@@ -5,7 +5,7 @@
 ![GitHub stars](https://img.shields.io/github/stars/KimYx0207/Claude-Code-Guide-Zh?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/KimYx0207/Claude-Code-Guide-Zh?style=social)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Version](https://img.shields.io/badge/Claude_Code-2.1.19-green.svg)
+![Version](https://img.shields.io/badge/Claude_Code-2.1.45-green.svg)
 
 </div>
 
@@ -88,9 +88,10 @@
 ## 📋 环境要求
 
 - **操作系统**：Windows 10+、macOS 10.15+、Linux
-- **Node.js**：18.0.0 或更高版本（推荐使用最新LTS版本）
-- **Claude API Key**：需要有效的Anthropic API密钥
+- **Claude API Key**：需要有效的Anthropic API密钥（或第三方中转站API Key）
 - **IDE**：VS Code、Cursor、Windsurf 或其他支持的编辑器
+
+> ⚠️ **2026年更新**：Claude Code 已切换到原生安装，**不再需要 Node.js**！详见安装指南。
 
 ---
 
@@ -199,9 +200,46 @@ Week 6：08-Agent-SDK（完整学习）
 
 ---
 
+## 📋 更新日志
+
+### v2.0 (2026-02-25) — 适配 Claude Code 2.1.45
+
+**版本同步更新**
+- 全部 10 篇教程版本号从 v2.0+ 更新至 v2.1+，验证日期更新至 2026-02-25
+- README 版本徽章从 2.1.19 更新至 2.1.45
+- 移除 Node.js 环境依赖要求（Claude Code 已切换原生安装）
+
+**新增内容**
+- 05-Hooks教程新增 3.7 节：WorktreeCreate / WorktreeRemove 工作树管理 Hook 详解
+- 05-Hooks教程 Hook 类型从 6 种扩展至 8 种，术语表和速查表同步更新
+- README 环境要求新增第三方中转站 API Key 说明
+
+**修复与优化**
+- 修复快速导航卡中"安装Node.js"的过时描述，改为"原生安装Claude Code"
+- 修复 02-基础使用教程中版本号示例（v2.0.71 → v2.1.45）
+- 清理 .drafts/ 目录下 5 个过时的项目过程文件
+
+**GitHub Issues**
+- 回复 Issue #5：连接失败排查步骤（HTTPS 代理配置）
+- 回复 Issue #2：SQLite MCP 包名验证与替代方案
+
+**待办（下一轮迭代）**
+- 补充 /fast、/agent 等新增 Slash 命令说明
+- 补充 Task 工具和子代理（Subagent）系统文档
+- 补充权限系统更新说明
+- 补充新 MCP 服务集成说明
+
+### v1.0 (2026-02-11) — 初始发布
+
+- 10 篇完整教程，约 104,000 字
+- 基于 Claude Code 2.1.19 版本编写
+- 70+ 代码示例，120 个 FAQ
+
+---
+
 ## ⚠️ 免责声明
 
-- 本教程内容基于Claude Code 2.1.19版本编写
+- 本教程内容基于Claude Code 2.1.45版本编写（持续更新中）
 - 部分功能可能随版本更新而变化，请以官方文档为准
 - 使用本教程产生的任何问题，作者不承担责任
 

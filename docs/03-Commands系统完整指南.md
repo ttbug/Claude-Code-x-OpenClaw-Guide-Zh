@@ -5,8 +5,8 @@
 > - **作者**：老金
 > - **预计学时**：4-6小时
 > - **难度等级**：⭐⭐ 入门级
-> - **更新日期**：2025年12月22日
-> - **适用版本**：Claude Code v2.0+（验证于2025-12-22）
+> - **更新日期**：2026年2月
+> - **适用版本**：Claude Code v2.1+（验证于2026-02-25）
 > - **信息来源**：[官方文档](https://docs.anthropic.com/en/docs/claude-code/slash-commands) | [Claude Command Suite](https://github.com/qdhenry/Claude-Command-Suite) | [最佳实践](https://www.anthropic.com/engineering/claude-code-best-practices)
 > - **前置要求**：已完成Claude Code安装和基础使用
 
@@ -1928,7 +1928,7 @@ allowed-tools:
 ---
 
 **文档版本**：v1.1（Critical Thinking审查修正版）
-**最后更新**：2025年12月23日
+**最后更新**：2026年2月25日
 **作者**：老金
 
 ---

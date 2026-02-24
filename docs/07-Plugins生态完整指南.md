@@ -5,8 +5,8 @@
 > - **作者**：老金
 > - **预计学时**：4-6小时
 > - **难度等级**：⭐⭐ 入门级
-> - **更新日期**：2025年12月19日
-> - **适用版本**：Claude Code v2.1+ (Plugins支持于2025年10月9日发布，当前最新版本v2.1.12)
+> - **更新日期**：2026年2月
+> - **适用版本**：Claude Code v2.1+（验证于2026-02-25）
 
 ---
 
@@ -166,7 +166,7 @@ Plugin = Commands + Skills + Hooks + MCP配置 + 文档
 
 2. **Jeremy Longshore社区Marketplace**:
    - URL:`https://github.com/jeremylongshore/claude-code-plugins-plus`
-   - 内容:持续更新中（2025年12月时有243个Plugin）
+   - 内容:持续更新中（2026年2月）
    - 特点:100%符合Anthropic 2025 Skills Schema
 
 3. **Composio Integration Marketplace**:
@@ -2103,7 +2103,7 @@ claude plugins profile report my-plugin
 
 ---
 
-**文档结束** | 更新日期:2025-12-19 | 版本:1.0
+**文档结束** | 更新日期:2026-02-25 | 版本:1.0
 
 ---
 

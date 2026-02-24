@@ -588,6 +588,60 @@ export ANTHROPIC_API_KEY="sk-ant-api03-xxxxx"
 3. 更新环境变量
 4. 检查API使用记录是否异常
 
+### 4.3.1 API中转站配置（可选）
+
+> 💡 **什么是API中转站？** 中转站是第三方提供的API代理服务，将你的请求转发到Anthropic官方API。对于国内用户来说，中转站可以解决网络访问问题，通常价格也更低。
+
+**中转站 vs 官方API对比：**
+
+| 对比项 | 官方API | 中转站 |
+|--------|---------|--------|
+| 价格 | 官方定价 | 通常为官方的 1/3 ~ 1/2 |
+| 网络要求 | 需要科学上网 | 无需科学上网 |
+| 支付方式 | 信用卡（Visa/Master） | 支付宝/微信 |
+| 稳定性 | 最稳定 | 取决于中转站质量 |
+| 免费额度 | 新用户有 $5 额度 | 通常无免费额度 |
+
+**配置方法：**
+
+中转站会提供一个自定义的 API 地址（Base URL），你需要同时配置 `ANTHROPIC_API_KEY` 和 `ANTHROPIC_BASE_URL` 两个环境变量。
+
+**Windows（PowerShell）：**
+
+```powershell
+# 设置中转站API Key（中转站提供的Key）
+[System.Environment]::SetEnvironmentVariable('ANTHROPIC_API_KEY', '你的中转站Key', 'User')
+
+# 设置中转站API地址
+[System.Environment]::SetEnvironmentVariable('ANTHROPIC_BASE_URL', 'https://你的中转站地址/v1', 'User')
+
+# 重启终端后验证
+$env:ANTHROPIC_BASE_URL
+```
+
+**macOS/Linux：**
+
+```bash
+# 在 ~/.zshrc 或 ~/.bashrc 中添加
+export ANTHROPIC_API_KEY="你的中转站Key"
+export ANTHROPIC_BASE_URL="https://你的中转站地址/v1"
+
+# 使配置生效
+source ~/.zshrc
+```
+
+**验证中转站是否生效：**
+
+```bash
+# 启动Claude Code后，观察是否能正常连接
+claude
+
+# 如果连接成功，说明中转站配置正确
+# 如果报错，检查URL末尾是否需要 /v1
+```
+
+> ⚠️ **安全提醒**：选择中转站时注意甄别，优先选择口碑好、运营时间长的服务商。中转站可以看到你的API请求内容，避免传输高度敏感的数据。
+
 ### 4.4 计费与订阅
 
 **Claude Code需要付费吗？**
@@ -1045,7 +1099,7 @@ echo "分析这段代码" | claude -p
 │  • Use /exit to quit                                    │
 ╰─────────────────────────────────────────────────────────╯
 
-Claude Code v2.0.71
+Claude Code v2.1.45
 Working directory: /Users/yourname/projects/my-app
 
 You: █
@@ -1120,7 +1174,7 @@ claude
 │  • Use /exit to quit                                    │
 ╰─────────────────────────────────────────────────────────╯
 
-Claude Code v2.0.71
+Claude Code v2.1.45
 Working directory: /你的当前目录
 
 You: █
@@ -1234,7 +1288,7 @@ claude --dangerously-skip-permissions  # 💀 别这么干！
 ```
 □ 看到Claude Code的欢迎界面
 □ 显示正确的工作目录路径
-□ 显示版本号（v2.0+）
+□ 显示版本号（v2.1+）
 □ 能看到 "You: █" 光标闪烁
 □ 输入 /help 能看到帮助信息
 ```
@@ -1261,7 +1315,7 @@ claude --dangerously-skip-permissions  # 💀 别这么干！
 
 #### VS Code扩展安装（官方扩展已发布）
 
-> ✅ **2025年12月最新**：Claude Code官方VS Code扩展已正式发布（Beta版）！
+> ✅ **2026年2月最新**：Claude Code官方VS Code扩展已正式发布（Beta版）！
 
 **扩展信息：**
 - **名称**：Claude Code for VS Code
@@ -2322,7 +2376,7 @@ You: █
 关键要素：
 
 - ✅ 显示欢迎信息
-- ✅ 显示版本号（v2.0+）
+- ✅ 显示版本号（v2.1+）
 - ✅ 显示工作目录
 - ✅ 有输入光标 `█`
 
