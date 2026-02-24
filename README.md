@@ -74,7 +74,7 @@
 | 02 | [基础使用完整指南](docs/02-基础使用完整指南.md) | 4-6h | ⭐ | ⭐⭐⭐ | 三种使用模式、30+命令详解 |
 | 03 | [Commands系统完整指南](docs/03-Commands系统完整指南.md) | 4-6h | ⭐⭐ | ⭐⭐ | 自定义Slash命令、工作流组合 |
 | 04 | [MCP集成完整指南](docs/04-MCP集成完整指南.md) | 4-6h | ⭐⭐ | ⭐⭐⭐ | 10+核心服务器、自定义开发 |
-| 05 | [Hooks系统完整指南](docs/05-Hooks系统完整指南.md) | 4-6h | ⭐⭐ | ⭐⭐⭐ | 6种Hook类型、自动化工作流 |
+| 05 | [Hooks系统完整指南](docs/05-Hooks系统完整指南.md) | 4-6h | ⭐⭐ | ⭐⭐⭐ | 8种Hook类型（含Worktree管理）、自动化工作流 |
 | 06 | [Skills定制完整指南](docs/06-Skills定制完整指南.md) | 6-8h | ⭐⭐ | ⭐⭐ | 创建可复用功能包 |
 | 07 | [Plugins生态完整指南](docs/07-Plugins生态完整指南.md) | 4-6h | ⭐⭐ | ⭐ | Marketplace浏览与安装 |
 | 08 | [Agent-SDK完整指南](docs/08-Agent-SDK完整指南.md) | 6-8h | ⭐⭐⭐ | ⭐⭐ | 编程开发AI Agent |
@@ -212,11 +212,15 @@ Week 6：08-Agent-SDK（完整学习）
 **新增内容**
 - 05-Hooks教程新增 3.7 节：WorktreeCreate / WorktreeRemove 工作树管理 Hook 详解
 - 05-Hooks教程 Hook 类型从 6 种扩展至 8 种，术语表和速查表同步更新
+- 01-安装指南新增 4.3.1 节：API中转站配置（ANTHROPIC_BASE_URL 环境变量）
+- 02-基础使用新增 /fast 快速模式命令说明
+- README 教程目录同步更新 Hooks 说明（6种→8种含Worktree管理）
 - README 环境要求新增第三方中转站 API Key 说明
 
 **修复与优化**
 - 修复快速导航卡中"安装Node.js"的过时描述，改为"原生安装Claude Code"
 - 修复 02-基础使用教程中版本号示例（v2.0.71 → v2.1.45）
+- 清理 06/09/10 教程中 23 处 "2.10+/2.1.0+" 旧版本标记，改为标准功能描述
 - 清理 .drafts/ 目录下 5 个过时的项目过程文件
 
 **GitHub Issues**
@@ -224,7 +228,6 @@ Week 6：08-Agent-SDK（完整学习）
 - 回复 Issue #2：SQLite MCP 包名验证与替代方案
 
 **待办（下一轮迭代）**
-- 补充 /fast、/agent 等新增 Slash 命令说明
 - 补充 Task 工具和子代理（Subagent）系统文档
 - 补充权限系统更新说明
 - 补充新 MCP 服务集成说明
