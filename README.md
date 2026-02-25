@@ -296,10 +296,10 @@ Week 8  ：OpenClaw 多Agent + Docker部署 + 安全
 - 回复 Issue #5：连接失败排查步骤（HTTPS 代理配置）
 - 回复 Issue #2：SQLite MCP 包名验证与替代方案
 
-**待办（下一轮迭代）**
-- 补充 Task 工具和子代理（Subagent）系统文档
-- 补充权限系统更新说明
-- 补充新 MCP 服务集成说明
+**已完成（原待办项）**
+- ✅ 08-Agent-SDK 新增 3.5 节：Task 工具与子代理编排（CLI 内置 Subagent 系统）
+- ✅ 02-基础使用 /permissions 节新增权限模式切换、allowedTools 配置说明
+- ✅ 04-MCP集成 新增 MCP Apps、工具懒加载（v2.1.45+）、远程 MCP 服务器说明
 
 ### v1.0 (2026-02-11) — 初始发布
 

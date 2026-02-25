@@ -748,6 +748,53 @@ async for message in query(prompt=prompt, options=options):
     # 处理消息...
 ```
 
+### 3.5 Task 工具与子代理编排（CLI 内置）
+
+> **补充说明**：上面 3.4 节讲的是 SDK 中如何编程创建子代理。这里介绍 Claude Code CLI 中**内置的 Task 工具**——你在交互模式下就能直接使用的多 Agent 编排系统。
+
+Claude Code CLI 内置了强大的 **Task 工具**，无需写代码就能让 Claude 自动创建子代理：
+
+**核心参数**：
+
+| 参数 | 说明 |
+|------|------|
+| `subagent_type` | 子代理类型（Explore、Bash、code-reviewer 等） |
+| `prompt` | 分配给子代理的任务描述 |
+| `isolation` | 设为 `"worktree"` 可在独立工作树中运行 |
+| `run_in_background` | 设为 `true` 在后台运行 |
+| `resume` | 传入之前的 agent ID 可恢复中断的子代理 |
+| `model` | 可指定 sonnet/opus/haiku，不指定则继承父级 |
+
+**常用子代理类型**：
+
+| 类型 | 用途 | 可用工具 |
+|------|------|----------|
+| `Explore` | 快速搜索代码库（Haiku 驱动，速度最快） | Read、Grep、Glob |
+| `Bash` | 执行终端命令、git 操作 | Bash |
+| `code-reviewer` | 代码审查 | Read、Grep、Glob、Bash |
+| `general-purpose` | 通用多步骤任务 | 全部工具 |
+| `Plan` | 设计实现方案 | 全部（不含写入） |
+
+**任务依赖（DAG 系统）**：
+
+Task 工具支持有向无环图（DAG）依赖关系——任务 C 可以等待任务 A 和任务 B 完成后再执行：
+
+```
+任务A: 构建API   ──┐
+                    ├──→ 任务C: 运行集成测试
+任务B: 配置认证  ──┘
+```
+
+**子代理上下文注入**：
+
+子代理获取上下文的三种方式：
+
+1. **Skills 注入**：在定义中指定 skills 字段，完整技能内容直接注入子代理
+2. **Memory 持久化**：子代理可拥有持久记忆目录，跨会话积累知识
+3. **工具访问控制**：通过 `allowedTools` / `disallowedTools` 精细控制子代理能力
+
+> 💡 **提示**：子代理不能再创建子代理（只有一层嵌套），最多可同时运行 10 个并行子代理。
+
 ---
 
 ## 第四部分：实战项目
