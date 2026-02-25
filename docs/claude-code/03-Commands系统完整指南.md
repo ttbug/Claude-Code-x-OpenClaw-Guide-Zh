@@ -765,7 +765,7 @@ $ARGUMENTS 格式：<主题> [风格] [字数]
 
 #### 基础工具调用
 
-```markdown
+````markdown
 ## 执行步骤
 
 ### 步骤1：读取配置文件
@@ -785,7 +785,7 @@ Grep("TODO|FIXME", path="src/", type="py")
 ```bash
 npm run test
 ```
-```
+````
 
 #### MCP工具调用
 
@@ -799,7 +799,7 @@ npm run test
 >
 > **详细教程**：MCP的安装和配置请见「04-MCP集成完整指南」。
 
-```markdown
+````markdown
 ## MCP工具使用
 
 ### 搜索最新信息
@@ -818,7 +818,7 @@ mcp__mcp-router__trending(
     max_results=20
 )
 ```
-```
+````
 
 ### 4.6 条件逻辑设计
 
