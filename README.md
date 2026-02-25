@@ -1,21 +1,24 @@
-# Claude Code 中文教程 - 直播教学版
+# Claude Code & OpenClaw 中文教程
 
 <div align="center">
 
-![GitHub stars](https://img.shields.io/github/stars/KimYx0207/Claude-Code-Guide-Zh?style=social)
-![GitHub forks](https://img.shields.io/github/forks/KimYx0207/Claude-Code-Guide-Zh?style=social)
+![GitHub stars](https://img.shields.io/github/stars/KimYx0207/Claude-Code-x-OpenClaw-Guide-Zh?style=social)
+![GitHub forks](https://img.shields.io/github/forks/KimYx0207/Claude-Code-x-OpenClaw-Guide-Zh?style=social)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Version](https://img.shields.io/badge/Claude_Code-2.1.45-green.svg)
+![Claude Code](https://img.shields.io/badge/Claude_Code-2.1.45-green.svg)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-v2026.2.23-blue.svg)
+
+**AI 双顶流 · 中文教程扛把子**
 
 </div>
 
-> 🎯 **从零基础到企业实战的系统化Claude Code教程**
+> 🎯 **Claude Code（官方编程神器）+ OpenClaw（224K Stars 开源AI助手）= 最强AI工具双教程**
 
-> 📚 10个完整教程 | 104,000字 | 70+代码示例 | 120个FAQ
+> 📚 21个完整教程 | 130,000+字 | 70+代码示例 | 170+FAQ
 
-> ⭐ 平均质量评分98分 | 小白友好 | 4种学习路径
+> ⭐ 小白友好 | 从零到企业实战 | 双线学习路径
 
-> 🔗 **GitHub仓库**：[https://github.com/KimYx0207/Claude-Code-Guide-Zh](https://github.com/KimYx0207/Claude-Code-Guide-Zh)
+> 🔗 **GitHub仓库**：[https://github.com/KimYx0207/Claude-Code-x-OpenClaw-Guide-Zh](https://github.com/KimYx0207/Claude-Code-x-OpenClaw-Guide-Zh)
 
 > 老金的开源知识库，实时更新群二维码：https://my.feishu.cn/wiki/OhQ8wqntFihcI1kWVDlcNdpznFf
 
@@ -53,65 +56,99 @@
 
 ## 📖 项目简介
 
-这是一套**企业级、系统化、小白友好**的Claude Code中文教程系列，涵盖从安装配置到企业实战的完整学习路径。所有教程都经过WebSearch验证、批判性思维审查，并遵循直播教程规范V3.0标准。
+这是一套**系统化、小白友好、双顶流合璧**的 AI 工具中文教程，涵盖两大王者级产品：
+
+| | Claude Code | OpenClaw |
+|--|-------------|----------|
+| **是什么** | Anthropic 官方 AI 编程 CLI 工具 | 开源 AI 私人助手框架（224K+ Stars） |
+| **干什么** | 终端里写代码、调Bug、做架构 | 消息平台上管邮件、排日程、自动化一切 |
+| **谁出的** | Anthropic 官方 | Peter Steinberger（原名 Clawdbot，因 Claude 商标被迫改名） |
+| **教程数** | 10 篇 + 1 速查卡 | 11 篇完整教程 |
+
+### 🧬 为什么放在一起？
+
+**因为它们是 AI Agent 时代的一体两面：**
+
+1. **血脉相连** — OpenClaw 原名 **Clawdbot**（Claude + Bot），DNA 里流着 Claude 的血，被 Anthropic 强制改名后依然是 Claude API 最大的社区消费者
+2. **互补工具链** — Claude Code 管**编程工作流**，OpenClaw 管**日常工作流**，合在一起就是程序员的 AI 全家桶
+3. **中国用户刚需** — 两大顶流 AI 工具的中文教程，一站式搞定，不用东找西找
 
 ### ✨ 核心特色
 
-- **🎓 系统化学习路径**：10个教程循序渐进，从零基础到企业实战
-- **🚀 快速上手**：3小时最小学习路径，快速掌握核心功能
-- **👶 小白友好**：72个术语解释、40个生活类比、120个FAQ
+- **🎓 双线学习路径**：Claude Code 编程线 + OpenClaw 助手线，各取所需
+- **🚀 快速上手**：Claude Code 3 小时上手 / OpenClaw 5 分钟跑起来
+- **👶 小白友好**：72个术语解释、40个生活类比、170+FAQ
 - **💻 实战导向**：70+个可运行代码示例，边学边练
-- **📊 质量保证**：平均98分质量评分，100%信息准确率
-- **🔄 4种学习路径**：快速上手/完整学习/问题排查/专项学习
+- **📊 质量保证**：所有教程经 WebSearch 验证，信息准确可靠
+- **🔄 持续更新**：适配最新版本（Claude Code 2.1.45 / OpenClaw v2026.2.23）
 
 ---
 
 ## 📚 教程目录
 
+### 🤖 Part 1：Claude Code — Anthropic 官方编程神器
+
 | 序号 | 教程名称 | 学时 | 难度 | 必学度 | 说明 |
 |------|---------|------|------|--------|------|
-| 01 | [Claude Code完整安装指南](docs/01-Claude-Code完整安装指南.md) | 2-3h | ⭐ | ⭐⭐⭐ | 环境搭建、API配置、IDE集成 |
-| 02 | [基础使用完整指南](docs/02-基础使用完整指南.md) | 4-6h | ⭐ | ⭐⭐⭐ | 三种使用模式、30+命令详解 |
-| 03 | [Commands系统完整指南](docs/03-Commands系统完整指南.md) | 4-6h | ⭐⭐ | ⭐⭐ | 自定义Slash命令、工作流组合 |
-| 04 | [MCP集成完整指南](docs/04-MCP集成完整指南.md) | 4-6h | ⭐⭐ | ⭐⭐⭐ | 10+核心服务器、自定义开发 |
-| 05 | [Hooks系统完整指南](docs/05-Hooks系统完整指南.md) | 4-6h | ⭐⭐ | ⭐⭐⭐ | 8种Hook类型（含Worktree管理）、自动化工作流 |
-| 06 | [Skills定制完整指南](docs/06-Skills定制完整指南.md) | 6-8h | ⭐⭐ | ⭐⭐ | 创建可复用功能包 |
-| 07 | [Plugins生态完整指南](docs/07-Plugins生态完整指南.md) | 4-6h | ⭐⭐ | ⭐ | Marketplace浏览与安装 |
-| 08 | [Agent-SDK完整指南](docs/08-Agent-SDK完整指南.md) | 6-8h | ⭐⭐⭐ | ⭐⭐ | 编程开发AI Agent |
-| 09 | [综合实战完整指南](docs/09-综合实战完整指南.md) | 2-3h | ⭐⭐⭐ | ⭐⭐ | 团队协作、CI/CD集成 |
-| 10 | [企业实战完整指南](docs/10-企业实战完整指南.md) | 待定 | ⭐⭐⭐ | ⭐ | 企业级最佳实践 |
+| 01 | [Claude Code完整安装指南](docs/claude-code/01-Claude-Code完整安装指南.md) | 2-3h | ⭐ | ⭐⭐⭐ | 环境搭建、API配置、IDE集成 |
+| 02 | [基础使用完整指南](docs/claude-code/02-基础使用完整指南.md) | 4-6h | ⭐ | ⭐⭐⭐ | 三种使用模式、30+命令详解 |
+| 03 | [Commands系统完整指南](docs/claude-code/03-Commands系统完整指南.md) | 4-6h | ⭐⭐ | ⭐⭐ | 自定义Slash命令、工作流组合 |
+| 04 | [MCP集成完整指南](docs/claude-code/04-MCP集成完整指南.md) | 4-6h | ⭐⭐ | ⭐⭐⭐ | 10+核心服务器、自定义开发 |
+| 05 | [Hooks系统完整指南](docs/claude-code/05-Hooks系统完整指南.md) | 4-6h | ⭐⭐ | ⭐⭐⭐ | 8种Hook类型（含Worktree管理）、自动化工作流 |
+| 06 | [Skills定制完整指南](docs/claude-code/06-Skills定制完整指南.md) | 6-8h | ⭐⭐ | ⭐⭐ | 创建可复用功能包 |
+| 07 | [Plugins生态完整指南](docs/claude-code/07-Plugins生态完整指南.md) | 4-6h | ⭐⭐ | ⭐ | Marketplace浏览与安装 |
+| 08 | [Agent-SDK完整指南](docs/claude-code/08-Agent-SDK完整指南.md) | 6-8h | ⭐⭐⭐ | ⭐⭐ | 编程开发AI Agent |
+| 09 | [综合实战完整指南](docs/claude-code/09-综合实战完整指南.md) | 2-3h | ⭐⭐⭐ | ⭐⭐ | 团队协作、CI/CD集成 |
+| 10 | [企业实战完整指南](docs/claude-code/10-企业实战完整指南.md) | 待定 | ⭐⭐⭐ | ⭐ | 企业级最佳实践 |
 
-**快速导航**：查看 [快速导航卡.md](docs/快速导航卡.md) 获取一页纸速查表
+**速查**：[Claude Code 快速导航卡](docs/claude-code/快速导航卡.md)
+
+### 🦞 Part 2：OpenClaw — 224K Stars 开源 AI 助手
+
+| 序号 | 教程名称 | 难度 | 说明 |
+|------|---------|------|------|
+| OC-01 | [项目介绍](docs/openclaw/01-introduction.md) | ⭐ | OpenClaw 是什么、发展历史、核心架构 |
+| OC-02 | [环境安装](docs/openclaw/02-installation.md) | ⭐ | macOS / Linux / Windows 全平台安装 |
+| OC-03 | [快速开始](docs/openclaw/03-quickstart.md) | ⭐ | 5 分钟跑起来第一个对话 |
+| OC-04 | [AI 模型配置](docs/openclaw/04-model-setup.md) | ⭐⭐ | 接入 OpenAI / Claude / Ollama 等 29 个模型 |
+| OC-05 | [消息平台集成](docs/openclaw/05-channels.md) | ⭐⭐ | 连接 WhatsApp / Telegram / Discord / 飞书等 30+ 平台 |
+| OC-06 | [技能系统](docs/openclaw/06-skills.md) | ⭐⭐ | 50+ 内置技能详解与自定义技能开发 |
+| OC-07 | [记忆系统](docs/openclaw/07-memory.md) | ⭐⭐ | AI 如何记住你的偏好和上下文 |
+| OC-08 | [多 Agent 路由](docs/openclaw/08-multi-agent.md) | ⭐⭐⭐ | 一个网关跑多个独立 AI 助手 |
+| OC-09 | [Docker 部署](docs/openclaw/09-docker.md) | ⭐⭐⭐ | 容器化部署与 VPS 远程访问 |
+| OC-10 | [安全最佳实践](docs/openclaw/10-security.md) | ⭐⭐⭐ | 安全配置、CVE 防护、权限管理 |
+| OC-11 | [常见问题](docs/openclaw/11-faq.md) | ⭐ | 踩坑指南与解决方案 |
 
 ---
 
 ## 📋 环境要求
 
+### Claude Code
+
 - **操作系统**：Windows 10+、macOS 10.15+、Linux
-- **Claude API Key**：需要有效的Anthropic API密钥（或第三方中转站API Key）
+- **Claude API Key**：需要有效的 Anthropic API 密钥（或第三方中转站 API Key）
 - **IDE**：VS Code、Cursor、Windsurf 或其他支持的编辑器
 
 > ⚠️ **2026年更新**：Claude Code 已切换到原生安装，**不再需要 Node.js**！详见安装指南。
+
+### OpenClaw
+
+- **Node.js**：22.0.0 或更高版本
+- **AI 模型 API Key**：OpenAI / Anthropic / Google 等（或使用 Ollama 本地模型免 Key）
+- **操作系统**：macOS / Linux / Windows（推荐 WSL2）
 
 ---
 
 ## 🚀 快速开始
 
-### 5分钟快速体验
+### 克隆仓库
 
 ```bash
-# 1. 克隆仓库
-git clone https://github.com/KimYx0207/Claude-Code-Guide-Zh.git
-cd Claude-Code-Guide-Zh
-
-# 2. 查看快速导航卡（一页纸速查表）
-cat docs/快速导航卡.md
-
-# 3. 开始第一个教程
-cat docs/01-Claude-Code完整安装指南.md
+git clone https://github.com/KimYx0207/Claude-Code-x-OpenClaw-Guide-Zh.git
+cd Claude-Code-x-OpenClaw-Guide-Zh
 ```
 
-### 3小时最小学习路径（推荐新手）
+### Claude Code 路线（3小时上手）
 
 ```
 Step 1（60分钟）：01-安装指南 → 路径A快速上手
@@ -120,15 +157,25 @@ Step 3（30分钟）：05-Hooks系统 → 第2部分快速开始
 完成 ✅ 能用Claude Code + 能用MCP + 能用Hook
 ```
 
-### 完整掌握路径（24-34小时）
+### OpenClaw 路线（1小时上手）
 
 ```
-Week 1：01-安装指南（完整学习）
-Week 2：04-MCP集成（完整学习）
-Week 3：05-Hooks系统（完整学习）
-Week 4：06-Skills定制（完整学习）
-Week 5：07-Plugins生态（完整学习）
-Week 6：08-Agent-SDK（完整学习）
+Step 1（15分钟）：OC-01 项目介绍 → 了解全局
+Step 2（20分钟）：OC-02 环境安装 → 装好环境
+Step 3（10分钟）：OC-03 快速开始 → 跑起第一个对话
+Step 4（15分钟）：OC-04 模型配置 → 接入 AI 模型
+完成 ✅ 能用OpenClaw + 能和AI对话
+```
+
+### 完整掌握路径
+
+```
+Week 1-2：Claude Code 安装 + 基础使用 + MCP
+Week 3-4：Claude Code Hooks + Skills + Plugins
+Week 5  ：Claude Code Agent-SDK + 综合实战
+Week 6  ：OpenClaw 安装 + 快速开始 + 模型配置
+Week 7  ：OpenClaw 消息平台 + 技能系统 + 记忆系统
+Week 8  ：OpenClaw 多Agent + Docker部署 + 安全
 ```
 
 ---
@@ -137,54 +184,56 @@ Week 6：08-Agent-SDK（完整学习）
 
 | 指标 | 数值 |
 |------|------|
-| **总文件数** | 18个 |
-| **Markdown教程** | 11个（10个主教程 + 1个快速导航） |
-| **总字数** | ~104,000字 |
-| **总行数** | 13,167行 |
+| **教程总数** | 21 个（Claude Code 10+1 / OpenClaw 11） |
+| **总字数** | ~130,000 字 |
 | **代码示例** | 70+个（全部可运行） |
-| **FAQ数量** | 120个 |
-| **平均质量评分** | 98分（基于小白友好度、信息准确性、实战性等8个维度） |
-| **规范合规性** | 100%（遵循直播教程规范V3.0） |
-| **信息准确率** | 经WebSearch验证，信息准确可靠 |
-| **项目结构** | docs/（教程文档）、images/（图片资源）、.drafts/（临时文件，已忽略） |
+| **FAQ数量** | 170+ 个 |
+| **覆盖AI模型** | 29 个提供商（OpenClaw） |
+| **覆盖消息平台** | 30+ 个（OpenClaw） |
+| **Claude Code版本** | 2.1.45（2026-02-25 验证） |
+| **OpenClaw版本** | v2026.2.23（2026-02-24 验证） |
 
 ---
 
 ## 🎯 适用人群
 
-- ✅ **零基础小白**：从未接触过Claude Code，想系统学习
-- ✅ **开发者**：想提升AI辅助编程效率
-- ✅ **团队负责人**：需要为团队制定Claude Code使用规范
-- ✅ **企业用户**：需要企业级部署和最佳实践指导
+- ✅ **零基础小白**：从未接触过 AI 编程工具，想系统学习
+- ✅ **开发者**：想用 Claude Code 提升编程效率 + 用 OpenClaw 自动化日常工作
+- ✅ **团队负责人**：为团队制定 AI 工具使用规范
+- ✅ **企业用户**：企业级部署和最佳实践
+- ✅ **AI 爱好者**：想搭建自己的 AI 私人助手
 
 ---
 
 ## 💡 学习建议
 
 ### 初学者（零基础）
-1. 先看 [快速导航卡.md](docs/快速导航卡.md) 了解全局
-2. 按3小时最小路径学习（01 → 04 → 05）
-3. 遇到问题查看各教程的FAQ章节
+
+**想学编程 AI** → 从 Claude Code Part 1 开始（01 → 04 → 05）
+
+**想玩 AI 助手** → 从 OpenClaw Part 2 开始（OC-01 → OC-02 → OC-03）
+
+**都想学** → 先 Claude Code 3 小时上手，再 OpenClaw 1 小时上手
 
 ### 进阶者（有基础）
-1. 直接跳到感兴趣的教程
-2. 使用"路径D：专项学习"模式
-3. 重点学习04-MCP、05-Hooks、06-Skills
+
+- Claude Code 重点：04-MCP、05-Hooks、06-Skills
+- OpenClaw 重点：06-技能系统、08-多Agent路由
 
 ### 高级者（深度定制）
-1. 重点学习06-Skills、08-Agent-SDK
-2. 参考09-综合实战、10-企业实战
-3. 结合实际项目需求定制开发
+
+- Claude Code：08-Agent-SDK、09-综合实战
+- OpenClaw：08-多Agent、09-Docker部署、10-安全
 
 ---
 
 ## 🤝 贡献指南
 
-欢迎提交Issue和Pull Request！
+欢迎提交 Issue 和 Pull Request！
 
-- 发现错误或过时信息，请提交Issue
-- 有改进建议，欢迎提交PR
-- 想分享使用经验，欢迎在Discussions讨论
+- 发现错误或过时信息，请提交 Issue
+- 有改进建议，欢迎提交 PR
+- 想分享使用经验，欢迎在 Discussions 讨论
 
 ---
 
@@ -196,11 +245,32 @@ Week 6：08-Agent-SDK（完整学习）
 
 ## 🙏 致谢
 
-感谢所有为Claude Code生态做出贡献的开发者和社区成员！
+感谢所有为 Claude Code 和 OpenClaw 生态做出贡献的开发者和社区成员！
 
 ---
 
 ## 📋 更新日志
+
+### v3.0 (2026-02-25) — 双顶流合璧
+
+**重大更新**
+- 项目升级为 **Claude Code & OpenClaw 双教程**
+- 仓库更名为 `Claude-Code-x-OpenClaw-Guide-Zh`
+- 新增 OpenClaw 11 篇完整中文教程（基于 v2026.2.23）
+- 目录结构重组：`docs/claude-code/` + `docs/openclaw/`
+
+**OpenClaw 教程内容**
+- OC-01 项目介绍：发展历史、核心架构、30+消息平台、29个AI模型提供商
+- OC-02 环境安装：macOS / Linux / Windows / Docker 全平台安装
+- OC-03 快速开始：5 分钟跑起第一个对话
+- OC-04 AI 模型配置：OpenAI / Claude / Gemini / Ollama 等模型接入
+- OC-05 消息平台集成：WhatsApp / Telegram / Discord / 飞书等连接
+- OC-06 技能系统：50+ 内置技能详解与自定义技能开发
+- OC-07 记忆系统：Markdown 记忆文件、自动刷新、多语言记忆
+- OC-08 多 Agent 路由：多 Agent 配置、消息路由、人格设定
+- OC-09 Docker 部署：容器化部署、VPS 部署、Fly.io / Render
+- OC-10 安全最佳实践：Gateway Token、TLS 1.3、沙箱隔离
+- OC-11 常见问题：安装/连接/模型/记忆/性能/中国用户专区
 
 ### v2.0 (2026-02-25) — 适配 Claude Code 2.1.45
 
@@ -216,14 +286,11 @@ Week 6：08-Agent-SDK（完整学习）
 - 02-基础使用新增 `--worktree`（`-w`）启动参数说明
 - 02-基础使用新增 /fast 快速模式命令说明
 - 01-安装指南新增 4.3.1 节：API中转站配置（ANTHROPIC_BASE_URL 环境变量）
-- README 教程目录同步更新 Hooks 说明（6种→8种含Worktree管理）
-- README 环境要求新增第三方中转站 API Key 说明
 
 **修复与优化**
 - 修复快速导航卡中"安装Node.js"的过时描述，改为"原生安装Claude Code"
 - 修复 02-基础使用教程中版本号示例（v2.0.71 → v2.1.45）
-- 清理 06/09/10 教程中 23 处 "2.10+/2.1.0+" 旧版本标记，改为标准功能描述
-- 清理 .drafts/ 目录下 5 个过时的项目过程文件
+- 清理 06/09/10 教程中 23 处 "2.10+/2.1.0+" 旧版本标记
 
 **GitHub Issues**
 - 回复 Issue #5：连接失败排查步骤（HTTPS 代理配置）
@@ -236,7 +303,7 @@ Week 6：08-Agent-SDK（完整学习）
 
 ### v1.0 (2026-02-11) — 初始发布
 
-- 10 篇完整教程，约 104,000 字
+- 10 篇完整 Claude Code 教程，约 104,000 字
 - 基于 Claude Code 2.1.19 版本编写
 - 70+ 代码示例，120 个 FAQ
 
@@ -244,13 +311,13 @@ Week 6：08-Agent-SDK（完整学习）
 
 ## ⚠️ 免责声明
 
-- 本教程内容基于Claude Code 2.1.45版本编写（持续更新中）
+- Claude Code 教程基于 2.1.45 版本编写，OpenClaw 教程基于 v2026.2.23 版本编写（持续更新中）
 - 部分功能可能随版本更新而变化，请以官方文档为准
 - 使用本教程产生的任何问题，作者不承担责任
 
 ---
 
 <div align="center">
-  <p>⭐ 如果这个教程对你有帮助，欢迎Star支持！</p>
-  <p>📢 分享给更多需要的人，让AI辅助编程更简单！</p>
+  <p>⭐ 如果这个教程对你有帮助，欢迎 Star 支持！</p>
+  <p>📢 分享给更多需要的人，让 AI 工具学习更简单！</p>
 </div>
