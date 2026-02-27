@@ -85,7 +85,7 @@
 | 想学什么 | 看哪几节 | 预计时间 |
 |----------|---------|---------|
 | **IDE集成** | 第6部分 | 30分钟 |
-| **权限配置** | 第5.5节（危险参数）+ 第6.3节 | 20分钟 |
+| **权限配置** | 第6.5节（危险参数）+ 第7.3节 | 20分钟 |
 | **从npm迁移** | 附录：迁移指南 | 15分钟 |
 
 ---
@@ -690,11 +690,13 @@ Token是AI处理文本的最小单位，用于计费：
 | **PowerShell**  | Windows           | `irm ... | iex`            | ⭐⭐⭐⭐⭐ |
 | **Homebrew**    | macOS/Linux       | `brew install --cask`    | ⭐⭐⭐⭐   |
 | **WinGet**      | Windows 10/11     | `winget install`         | ⭐⭐⭐⭐   |
+| **NPM** ⚠️    | 全平台（需Node.js） | `npm install -g`         | ⭐⭐⭐     |
 
 > 💡 **老金推荐**：
 > - **Windows用户**：用PowerShell（最简单）
 > - **Mac用户**：用脚本安装或Homebrew（都很快）
 > - **Linux用户**：用脚本安装
+> - **原生安装失败？**：试试 NPM 方式（见方式4），虽然官方标记为废弃，但仍然可以正常使用
 
 ---
 
@@ -810,7 +812,64 @@ winget install Anthropic.ClaudeCode
 
 ---
 
-### 5.5 验证安装成功
+### 5.5 方式4：NPM安装（⚠️ 已废弃但仍可用）
+
+> ⚠️ **重要说明**：NPM 安装方式已被官方标记为 **Deprecated（废弃）**，官方推荐使用上面的原生安装。但如果你原生安装遇到问题（网络问题、权限问题等），NPM 仍然是一个**可用的备选方案**。
+
+**前提条件**：需要先安装 [Node.js](https://nodejs.org/) 18 或更高版本。
+
+```bash
+# 检查 Node.js 版本（需要 18+）
+node --version
+
+# 通过 NPM 全局安装 Claude Code
+npm install -g @anthropic-ai/claude-code
+```
+
+**各平台安装细节：**
+
+**Windows（CMD 或 PowerShell）：**
+
+```powershell
+# 直接全局安装
+npm install -g @anthropic-ai/claude-code
+
+# 验证
+claude --version
+# 预期输出：Claude Code v2.1.x (npm)  ← 注意这里显示 npm 而非 native
+```
+
+**macOS/Linux：**
+
+```bash
+# 全局安装（不要用 sudo！）
+npm install -g @anthropic-ai/claude-code
+
+# 如果提示权限错误，修复 npm 全局目录权限
+mkdir -p ~/.npm-global
+npm config set prefix '~/.npm-global'
+echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.zshrc
+source ~/.zshrc
+
+# 然后重新安装
+npm install -g @anthropic-ai/claude-code
+```
+
+**NPM 安装 vs 原生安装的区别：**
+
+| 对比项 | 原生安装 ⭐ | NPM 安装 ⚠️ |
+|--------|------------|-------------|
+| 需要 Node.js | ❌ 不需要 | ✅ 需要 18+ |
+| 自动更新 | ✅ 内置 | ❌ 需手动 `npm update -g` |
+| 安装大小 | ~80MB | ~80MB + Node.js |
+| 官方支持 | ✅ 推荐 | ⚠️ 已废弃，但仍可用 |
+| 适合场景 | 所有用户 | 原生安装失败时的备选 |
+
+> 💡 **老金建议**：能用原生安装就用原生安装！NPM 方式只在原生安装搞不定的时候当备胎用。装好之后可以随时通过 `claude install` 迁移到原生版本。
+
+---
+
+### 5.6 验证安装成功
 
 **无论用哪种方式，安装完成后验证：**
 
@@ -835,7 +894,7 @@ which claude     # macOS/Linux
 
 ---
 
-### 5.6 安装失败排查
+### 5.7 安装失败排查
 
 #### 问题1：命令找不到
 
@@ -904,7 +963,7 @@ Windows已保护你的电脑
 
 ---
 
-### 5.7 卸载 Claude Code
+### 5.8 卸载 Claude Code
 
 **如果你需要卸载：**
 
@@ -1910,19 +1969,57 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```bash
 # 症状
 'claude' 不是内部或外部命令
+# 或
+claude: The term 'claude' is not recognized as a name of a cmdlet
 ```
 
 **原因**：原生安装目录未添加到PATH
 
-**解决方案：**
+**解决方案（手动添加 PATH 环境变量）：**
 
-```bash
-# 原生安装应该自动配置PATH
-# 如果遇到此问题，手动添加：
-# Win+R → sysdm.cpl → 高级 → 环境变量
-# 用户变量的Path中添加：
-# C:\Users\<用户名>\AppData\Local\claude-code
+Claude Code 原生安装后，可执行文件通常位于以下路径：
+- **原生安装**：`C:\Users\<你的用户名>\AppData\Local\claude-code\`
+- **NPM 安装**：`C:\Users\<你的用户名>\AppData\Roaming\npm\`
+
+**方法1：通过系统设置（图形界面，推荐新手用）**
+
+1. 按下 `Win + R` 打开"运行"对话框
+2. 输入 `sysdm.cpl`，按回车，打开"系统属性"
+3. 点击 **"高级"** 选项卡
+4. 点击底部的 **"环境变量"** 按钮
+5. 在 **"用户变量"** 区域（上半部分），找到名为 `Path` 的变量，双击它
+6. 在弹出的"编辑环境变量"窗口中，点击 **"新建"**
+7. 输入 Claude Code 的安装路径：
+   - 原生安装填：`%LOCALAPPDATA%\claude-code\`
+   - NPM 安装填：`%APPDATA%\npm\`
+8. 点击 **"确定"** 保存所有对话框
+9. **关闭并重新打开所有终端窗口**（重要！已打开的终端不会自动刷新 PATH）
+
+**方法2：通过 PowerShell 命令**
+
+```powershell
+# 查看当前用户 PATH
+[System.Environment]::GetEnvironmentVariable('Path', 'User')
+
+# 添加 Claude Code 到 PATH（原生安装路径）
+$currentPath = [System.Environment]::GetEnvironmentVariable('Path', 'User')
+$newPath = "$currentPath;$env:LOCALAPPDATA\claude-code"
+[System.Environment]::SetEnvironmentVariable('Path', $newPath, 'User')
+
+# 如果是 NPM 安装，改用这个路径
+# $newPath = "$currentPath;$env:APPDATA\npm"
+
+# 重启 PowerShell 后验证
+claude --version
 ```
+
+**方法3：快捷方式（Win+R）**
+
+```
+Win+R → 输入 sysdm.cpl → 回车 → 高级 → 环境变量 → 用户变量的 Path → 编辑 → 新建 → 粘贴路径 → 确定
+```
+
+> ⚠️ **注意**：修改 PATH 后，必须**重新打开终端**才能生效！已经打开的 PowerShell/CMD 窗口用的还是旧的 PATH，必须关掉重开。
 
 #### macOS平台
 
